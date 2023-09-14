@@ -6,7 +6,7 @@ interface IProfile{
     name?:string ; 
 }
 
-export const Profile : FC = (props:any) : ReactElement => { 
+export const Profile : FC<IProfile> = (props:any) : ReactElement => { 
     
     const {name = 'Grahil'} = props ; 
 
@@ -36,4 +36,8 @@ export const Profile : FC = (props:any) : ReactElement => {
             </Typography>
         </Box>
     ) ; 
-} 
+} ;
+
+Profile.propTypes = { 
+    name: PropTypes.string.isRequired,
+}
