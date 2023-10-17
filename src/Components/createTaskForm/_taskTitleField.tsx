@@ -8,7 +8,6 @@ export const TaskTitleField: FC<ITextField>  = (props) : ReactElement => {
     const {
         onChange = (e) => console.log(e) , 
         disabled =false } = props ; 
-
     return(
     <TextField
         id='title'
