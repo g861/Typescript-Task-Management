@@ -6,6 +6,7 @@ import { TaskFooter } from './_taskFooter';
 import { TaskInterface } from './interfaces/ITask';
 import { Priority } from '../createTaskForm/enums/Priority';
 import { Status } from '../createTaskForm/enums/Status';
+import  PropTypes from 'prop-types';
 export const Task :FC <TaskInterface> =(props) : ReactElement => { 
     
     const {
@@ -40,4 +41,14 @@ export const Task :FC <TaskInterface> =(props) : ReactElement => {
             <TaskFooter /> 
         </Box>
     )
+}
+
+Task.propTypes = {
+    title: PropTypes.string , 
+    date: PropTypes.instanceOf(Date) ,
+    description:PropTypes.string ,
+    priority:PropTypes.string ,
+    status:PropTypes.string , 
+    onStatusChange : PropTypes.func ,
+    onClick : PropTypes.func
 }
